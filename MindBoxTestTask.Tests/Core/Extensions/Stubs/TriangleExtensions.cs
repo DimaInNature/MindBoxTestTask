@@ -2,7 +2,7 @@
 
 internal static class TriangleExtensions
 {
-    public static bool IsRightTriangle(this Triangle triangle)
+    public static bool IsRectangular(this Triangle triangle)
     {
         (int a, int b, int c) = (triangle.A, triangle.B, triangle.C);
 
