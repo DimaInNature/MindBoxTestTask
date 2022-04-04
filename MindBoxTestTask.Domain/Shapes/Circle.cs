@@ -1,19 +1,26 @@
 ﻿namespace MindBoxTestTask.Domain.Shapes;
 
-public struct Circle : IShape
+public record struct Circle : IShape
 {
-    public Circle(int radius) =>
-        Radius = radius;
+    /// <summary> Радиус круга </summary>
 
-    public int Radius
+    private readonly int _radius;
+
+    public Circle(int radius)
     {
-        get => _radius < 1
-            ? 1
-            : _radius;
-        set => _radius = value < 1
-            ? 1
-            : value;
+        if (IsValidData(radius) is false)
+            throw new ArgumentException(message: "Создание круга с введёнными данными - невозможно");
+
+        _radius = radius;
     }
 
-    private int _radius = 1;
+    public override string ToString() => $"radius: {_radius}";
+
+    /// <summary> Возвращает данные об объекте </summary>
+
+    public int GetData() => _radius;
+
+    /// <summary> Простейший валидатор </summary>
+
+    private static bool IsValidData(int radius) => radius > 0;
 }

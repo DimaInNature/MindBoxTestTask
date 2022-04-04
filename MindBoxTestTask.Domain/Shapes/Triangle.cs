@@ -1,53 +1,46 @@
 ﻿namespace MindBoxTestTask.Domain.Shapes;
 
-public struct Triangle : IShape
+public record struct Triangle : IShape
 {
+    /// <summary> Первая сторона </summary>
+
+    private readonly int _a;
+
+    /// <summary> Вторая сторона </summary>
+
+    private readonly int _b;
+
+    /// <summary> Третья сторона </summary>
+
+    private readonly int _c;
+
     public Triangle(int a, int b, int c)
     {
-        bool isCorrect = (a + b > c) | (b + c > a) | (c + a > b);
+        if (IsValidData(a, b, c) is false)
+            throw new ArgumentException(message: "Треугольник не существует");
 
-        (A, B, C) = isCorrect
-            ? (a, b, c)
-            : throw new ArgumentException(message: "Треугольник не существует");
+        (_a, _b, _c) = (a, b, c);
     }
 
-    // Изменяем дефолтные аксессоры, добавляем им логики.
+    /// <summary> Метод возвращающих кортеж данных о треугольнике </summary>
 
-    // Значение стороны не может быть меньше единицы.
+    public (int a, int b, int c) GetData() => (_a, _b, _c);
 
-    public int A
+    public override string ToString() => $"a: {_a}, b: {_b}, c: {_c}";
+
+    /// <summary> Метод, который показывает, является ли фигура треугольником </summary>
+
+    public bool IsRectangular()
     {
-        get => _a < 1
-            ? 1
-            : _a;
-        set => _a = value < 1
-            ? 1
-            : _a = value;
+        var (a, b, c) = (_a * _a, _b * _b, _c * _c);
+
+        return (a + b == c)
+           | (a + c == b)
+           | (c + b == a);
     }
 
-    private int _a = 1;
+    /// <summary> Простейший валидатор </summary>
 
-    public int B
-    {
-        get => _b < 1
-            ? 1
-            : _b;
-        set => _b = value < 1
-            ? 1
-            : _b = value;
-    }
-
-    private int _b = 1;
-
-    public int C
-    {
-        get => _c < 1
-            ? 1
-            : _c;
-        set => _c = value < 1
-            ? 1 :
-            _c = value;
-    }
-
-    private int _c = 1;
+    private static bool IsValidData(int a, int b, int c) =>
+       (a + b > c) | (b + c > a) | (c + a > b) | a < 1 | b < 1 | c < 1;
 }

@@ -2,28 +2,36 @@
 
 public class Program
 {
-    public static IServiceProvider ServiceProvider;
-
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        var services = new ServiceCollection();
+        // Создаём коллекцию сервисов
+        // и запускаем механизм внедрения зависимостей
+
+        ServiceCollection services = new();
 
         ConfigureServices(services);
 
-        ServiceProvider = services.BuildServiceProvider();
+        IServiceProvider serviceProvider = services.BuildServiceProvider();
+
+        // Создание тестовых данных
 
         Triangle triangle = new(a: 3, b: 4, c: 5);
 
         Circle circle = new(radius: 10);
 
-        Example.Start(triangle, circle);
+        // Запуск тестового сервиса
+
+        serviceProvider.GetStartupService()?.Start(triangle, circle);
 
         Console.ReadLine();
     }
+
+    /// <summary> Конфигуратор IoC контейнера </summary>
 
     private static void ConfigureServices(IServiceCollection services)
     {
         services.AddTransient<IShapeCalculator<Triangle>, TriangleCalculatorService>();
         services.AddTransient<IShapeCalculator<Circle>, CircleCalculatorService>();
+        services.AddSingleton<StartupExampleService>();
     }
 }

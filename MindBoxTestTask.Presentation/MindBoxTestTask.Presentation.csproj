@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MindBoxTestTask.Extensions\MindBoxTestTask.Extensions.csproj" />
+    <ProjectReference Include="..\MindBoxTestTask.Infra.Extensions\MindBoxTestTask.Infra.Extensions.csproj" />
     <ProjectReference Include="..\MindBoxTestTask.Services\MindBoxTestTask.Services.csproj" />
   </ItemGroup>
 

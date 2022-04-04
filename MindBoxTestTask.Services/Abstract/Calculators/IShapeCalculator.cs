@@ -3,5 +3,5 @@
 public interface IShapeCalculator<T>
     where T : IShape
 {
-    int CalculateSquare(T shape);
+    double CalculateSquare(T shape);
 }

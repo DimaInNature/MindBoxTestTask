@@ -21,4 +21,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MindBoxTestTask.Domain\MindBoxTestTask.Domain.csproj" />
+    <ProjectReference Include="..\MindBoxTestTask.Services\MindBoxTestTask.Services.csproj" />
+  </ItemGroup>
+
 </Project>

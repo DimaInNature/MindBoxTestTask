@@ -2,26 +2,23 @@
 
 public class CircleCalculatorServiceTest
 {
+    private readonly CircleCalculatorService _fixture = new();
+
     [Theory]
-    [InlineData(10, 314)]
-    [InlineData(1, 3)]
-    [InlineData(-1, 3)]
-    [InlineData(-2.5, 3)]
+    [InlineData(10, 314.1592653589793)]
+    [InlineData(1, Math.PI)]
     public void CircleCalculatorService_CalculateSquare_True(int radius, double expectedResult)
     {
+        // Arrange
+
         Circle circle = new(radius);
 
-        var result = CalculateSquare(circle);
+        // Act
+
+        var result = _fixture.CalculateSquare(circle);
+
+        // Assert
 
         Assert.Equal(expected: expectedResult, actual: result);
-    }
-
-    private int CalculateSquare(Circle circle)
-    {
-        if (circle.Radius < 0)
-            throw new ArgumentException(
-                message: "Радиус фигуры не может быть отрицательным");
-
-        return (int)(Math.PI * circle.Radius * circle.Radius);
     }
 }

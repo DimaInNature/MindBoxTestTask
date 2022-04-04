@@ -3,23 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1F582CCD-EA71-4D1F-A795-9A1CB512CB5B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{1F582CCD-EA71-4D1F-A795-9A1CB512CB5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBoxTestTask.Services", "MindBoxTestTask.Services\MindBoxTestTask.Services.csproj", "{3A8CEB12-EA10-401D-B90E-15BB2534BA80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindBoxTestTask.Services", "MindBoxTestTask.Services\MindBoxTestTask.Services.csproj", "{3A8CEB12-EA10-401D-B90E-15BB2534BA80}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E922CFAF-6201-49E4-83D9-D13F5E2C4067}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E922CFAF-6201-49E4-83D9-D13F5E2C4067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBoxTestTask.Tests", "MindBoxTestTask.Tests\MindBoxTestTask.Tests.csproj", "{FD66C350-6AAE-4CDA-990C-DC4FC57349B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindBoxTestTask.Tests", "MindBoxTestTask.Tests\MindBoxTestTask.Tests.csproj", "{FD66C350-6AAE-4CDA-990C-DC4FC57349B1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C0DEC7E9-6EE3-4DCE-8323-C85EA026634D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{C0DEC7E9-6EE3-4DCE-8323-C85EA026634D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBoxTestTask.Domain", "MindBoxTestTask.Domain\MindBoxTestTask.Domain.csproj", "{F06ECA57-EAC2-4BA3-BE68-50EAEA2BAE3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindBoxTestTask.Domain", "MindBoxTestTask.Domain\MindBoxTestTask.Domain.csproj", "{F06ECA57-EAC2-4BA3-BE68-50EAEA2BAE3F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B42D5952-C278-40B5-866F-EBE838F6C7B8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{B42D5952-C278-40B5-866F-EBE838F6C7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBoxTestTask.Presentation", "MindBoxTestTask.Presentation\MindBoxTestTask.Presentation.csproj", "{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindBoxTestTask.Presentation", "MindBoxTestTask.Presentation\MindBoxTestTask.Presentation.csproj", "{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBoxTestTask.Extensions", "MindBoxTestTask.Extensions\MindBoxTestTask.Extensions.csproj", "{7D40417A-26C7-4B95-83E9-D28033F1E4F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{07553689-F892-4C44-9E9F-E1A75494C671}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindBoxTestTask.Infra.Extensions", "MindBoxTestTask.Infra.Extensions\MindBoxTestTask.Infra.Extensions.csproj", "{938FF348-11F9-43D8-99BD-3DD975327111}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A8CEB12-EA10-401D-B90E-15BB2534BA80} = {3A8CEB12-EA10-401D-B90E-15BB2534BA80}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +48,10 @@ Global
 		{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D40417A-26C7-4B95-83E9-D28033F1E4F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D40417A-26C7-4B95-83E9-D28033F1E4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D40417A-26C7-4B95-83E9-D28033F1E4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D40417A-26C7-4B95-83E9-D28033F1E4F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938FF348-11F9-43D8-99BD-3DD975327111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938FF348-11F9-43D8-99BD-3DD975327111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938FF348-11F9-43D8-99BD-3DD975327111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938FF348-11F9-43D8-99BD-3DD975327111}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,7 +61,7 @@ Global
 		{FD66C350-6AAE-4CDA-990C-DC4FC57349B1} = {E922CFAF-6201-49E4-83D9-D13F5E2C4067}
 		{F06ECA57-EAC2-4BA3-BE68-50EAEA2BAE3F} = {C0DEC7E9-6EE3-4DCE-8323-C85EA026634D}
 		{45E85235-7DF6-4FD3-AEC8-E8051B7A60A8} = {B42D5952-C278-40B5-866F-EBE838F6C7B8}
-		{7D40417A-26C7-4B95-83E9-D28033F1E4F4} = {1F582CCD-EA71-4D1F-A795-9A1CB512CB5B}
+		{938FF348-11F9-43D8-99BD-3DD975327111} = {07553689-F892-4C44-9E9F-E1A75494C671}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5641F0FF-8774-46AA-8ECC-B5192D9B703D}

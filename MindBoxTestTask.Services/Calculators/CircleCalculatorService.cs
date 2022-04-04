@@ -2,14 +2,12 @@
 
 public class CircleCalculatorService : IShapeCalculator<Circle>
 {
-    public int CalculateSquare(Circle circle)
+    public double CalculateSquare(Circle circle)
     {
-        // Выполняем проверку. Радиус не может быть отрицательным.
-        if (circle.Radius < 0)
-            throw new ArgumentException(
-                message: "Радиус фигуры не может быть отрицательным");
+        int radius = circle.GetData();
 
-        // Формула площади будет: π*Radius^2
-        return (int)(Math.PI * circle.Radius * circle.Radius);
+        double square = Math.PI * radius * radius;
+
+        return square;
     }
 }

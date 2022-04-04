@@ -2,21 +2,21 @@
 
 public class TriangleCalculatorService : IShapeCalculator<Triangle>
 {
-    public int CalculateSquare(Triangle triangle)
-    {
-        if (triangle.A < 1 | triangle.B < 1 | triangle.C < 1)
-            throw new ArgumentException("Стороны треугольника не могут быть меньше нуля");
+    /// <summary> Вычисляет площадь треугольника по формуле Герона </summary>
 
+    public double CalculateSquare(Triangle triangle)
+    {
         // Используем формулу Герона для нахождения площади треугольника
         // по трем сторонам:
 
-        double p = (triangle.A + triangle.B + triangle.C) / 2;
+        var (a, b, c) = triangle.GetData();
 
-        double s = Math.Sqrt(p * (p - triangle.A) * (p - triangle.B) * (p - triangle.C));
+        double p = (a + b + c) / 2;
+
+        double square = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
 
         // Возвращаем ответ
-        return (int)s;
+
+        return square;
     }
-
 }
-
